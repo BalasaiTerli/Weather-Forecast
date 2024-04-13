@@ -1,13 +1,314 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* App.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+.table-background {
+  background-color: green; /* Light gray */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 800px;
 }
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow */
+}
+
+th, td {
+  padding: 12px 15px; /* Increase padding for better spacing */
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+  cursor:pointer;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold; /* Make headers bold */
+}
+
+td:first-child {
+  padding-left: 20px; /* Add padding to the left of S.No */
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem; /* Adjust size as needed */
+  margin: 20px 0;
+}
+
+.loading-icon-container i {
+  animation: spin 1s infinite linear; /* Add spin animation */
+}
+
+.no-more-data {
+  text-align: center;
+  margin-top: 20px;
+}
+/* App.css */
+
+
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-bar input:focus {
+  border-color: #007bff;
+}
+.go-to-top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+.go-to-top-button:hover {
+  background-color: #0056b3;
+}
+/* Add this CSS to your App.css file */
+
+/* Styling for arrow icons */
+.fa-arrow-up,
+.fa-arrow-down {
+  margin-left: 5px;
+  font-size: 15px;
+}
+
+.fa-arrow-up::before {
+  content: "\25B2"; /* Unicode character for triangle pointing up */
+}
+
+.fa-arrow-down::before {
+  content: "\25BC"; /* Unicode character for triangle pointing down */
+}
+.weather-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.centered-card {
+  margin-bottom: 20px;
+}
+
+.bottom-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.weather-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px; /* Increased padding */
+  margin-right: 20px; /* Add some spacing between cards */
+  margin-bottom: 20px;
+  width: 300px; /* Increased width */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Added box shadow */
+}
+
+.weather-card h4 {
+  margin-bottom: 10px;
+}
+
+.weather-details {
+  display: flex;
+  align-items: center; /* Center align content */
+}
+
+.weather-icon img {
+  width: 60px; /* Increased image size */
+}
+
+.weather-info p {
+  margin: 5px 0;
+  color: #666;
+}
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius:20%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+  -webkit-border-radius:20%;
+  -moz-border-radius:20%;
+  -ms-border-radius:20%;
+  -o-border-radius:20%;
+}
+
+.scroll-to-top:hover {
+  background-color: #0056b3;
+}
+/* App.css */
+
+/* Style for the autocomplete container */
+.react-autosuggest__container {
+  position: relative;
+  width: 100%;
+}
+
+/* Style for the input field */
+.react-autosuggest__input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+/* Style for the suggestions container */
+.react-autosuggest__suggestions-container {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  z-index: 999;
+}
+
+/* Show the suggestions container when suggestions are available */
+.react-autosuggest__suggestions-container--open {
+  display: block;
+}
+
+/* Style for each suggestion */
+.react-autosuggest__suggestion {
+  padding: 10px;
+  cursor: pointer;
+  list-style-type:none;
+}
+
+/* Style for the highlighted suggestion */
+.react-autosuggest__suggestion--highlighted {
+  background-color: #f0f0f0;
+}
+.weather-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weather-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.weather-card-center {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: lightblue; /* Example background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.weather-row {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .weather-row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.date {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.description {
+  font-size: 16px;
+  color: #555;
+}
+
+.temperature {
+  font-size: 16px;
+  color: #777;
+}
+
+.other-details {
+  font-size: 14px;
+  color: #888;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+}
+/* Add custom styles for the title */
+.custom-title {
+  color: #007bff; /* Set text color to blue */
+  font-size: 24px; /* Set font size to 24px */
+  font-weight: bold; /* Set font weight to bold */
+  margin-bottom: 20px; /* Add margin below the title */
+  text-transform: uppercase; /* Transform text to uppercase */
+  margin-bottom: 10px; /* Add margin between "Weather Information" and location */
+}
+
+
+
+
+
+
